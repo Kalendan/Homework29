@@ -1,7 +1,7 @@
 
-//    public class Webfilter implements Filter{
-//
-//        @Override
+ public class Webfilter extends Filter {
+
+      @Override
 //        public void konnektion() {
 //            boolean webadress = Useradmintype.ADMIN;
 //            boolean webadress = Useradmintype.USER;
