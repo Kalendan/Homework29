@@ -1,5 +1,5 @@
 
-    public class Webfilter implements Filter, Useradmintype {
+    public class Webfilter implements Filter{
 
         @Override
         public void konnektion() {
