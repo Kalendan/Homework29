@@ -1,15 +1,15 @@
 public class Main {
-//    public class Main {
-//        public static void main(String[] args) {
-//            Person person = new Person();
-//            person.getType(Useradmintype.ADMIN);
-//            person.getType(Useradmintype.USER);
-//            System.out.println(person);
-//            String a = "http://web-for-user";
-//
-//
 
-        }
+
+
+      public static void main(String[] args) {
+          Person person = new Person(UserType.USER);
+          Webfilter webfilter = new Webfilter();
+          boolean answer = webfilter.checkAccess("jsjsjdj", person.getUserType());
+          System.out.println(answer);
+
+
+      }}
 
 
 

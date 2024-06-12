@@ -1,24 +1,18 @@
 
- public class Webfilter extends Filter {
+ public class Webfilter implements Filter {
 
-      @Override
-//        public void konnektion() {
-//            boolean webadress = Useradmintype.ADMIN;
-//            boolean webadress = Useradmintype.USER;
-//
-//            if (Useradmintype.ADMIN) {
-//                System.out.println(webadress);
-//            }
-//
-//            return webadress;
-//         else{
-//                if (Useradmintype.USER && a.equals(getWebadress())) {
-//                    System.out.println(a);
-//                }
-//
-//                return a;
-//            }
-//
-//
-//        }
-//    }
+
+  private static final String ACCESS_SITE_TO_USER = "http://web-for-user";
+
+  @Override
+  public boolean checkAccess(String site, UserType userType) {
+   if (userType == UserType.ADMIN) {
+    return true;
+   }
+   if (userType == UserType.USER && site.startsWith(ACCESS_SITE_TO_USER)) {
+    return true;
+   }
+   return false;
+
+  }
+ }

@@ -1,9 +1,20 @@
 import java.util.Objects;
 
-public class Person extends Filter {
-    public Person(String name, Useradmintype type) {
+public class Person  {
+    private UserType userType;
+    private String name;
+
+    public Person(UserType userType) {
+        this.userType = userType;
         this.name = name;
-        this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "userType=" + userType +
+                ", name='" + name + '\'' +
+                '}';
     }
 
     @Override
@@ -11,17 +22,21 @@ public class Person extends Filter {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return type == person.type && Objects.equals(name, person.name);
+        return userType == person.userType && Objects.equals(name, person.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, name);
+        return Objects.hash(userType, name);
     }
 
-    private Useradmintype type;
+    public UserType getUserType() {
+        return userType;
+    }
 
-    private String name;
+    public void setUserType(UserType userType) {
+        this.userType = userType;
+    }
 
     public String getName() {
         return name;
@@ -30,18 +45,10 @@ public class Person extends Filter {
     public void setName(String name) {
         this.name = name;
     }
-
-
-    public Useradmintype getType(Useradmintype admin) {
-        return type;
-    }
-
-    public void setType(Useradmintype type) {
-        this.type = type;
-    }
-
-
-
-
 }
+
+
+
+
+
 
